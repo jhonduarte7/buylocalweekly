@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* Body section */
+body {
+	background-color:#FFF;
+	color:#111;
+	text-align:center
+}
+/* Site area section */
+#Wrapper {
+	text-align: justify;
+	width: 800px;
+	height: 700px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	position:relative;
+	font-family:Verdana, Geneva, sans-serif;
+}
+/* Logo, city name & welcome message section */
+#SiteLogo {
+	top:5px;
+	left:275px;
+	position:absolute;
+}
+#CityName {
+	font-size:62px;
+	color:#84BA22;
+	text-transform:uppercase;
+	top:90px;
+	left:0px;
+	width:800px;
+	text-align:center;
+	position:absolute;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-shadow: 0 -0.8px 2px #ED7C10;
+}
+#Reminder {
+	position:absolute;
+	top:175px;;
+	left:0px;
+	width:800px;
+	text-align:center;
+	text-decoration:underline;
+	text-shadow: 0 -0.8px 1px #999;
+	font-size:22px;
+	font-family: 'Fjalla One', sans-serif;
+}
+/* Deal box section */
+#DealsMainBox {
+	top:225px;
+	left:5px;
+	width:785px;
+	height:450px;
+	position:absolute;
+}
+/* Deal details section */
+#deallistbox {
+	top:40px;
+	left:35px;
+	width:700px;
+	height:315px;
+	position:absolute;
+	border: 3px dashed #21303b;
+	-webkit-box-shadow: 5px 5px 5px #000;
+	-moz-box-shadow: 5px 5px 5px #000;
+	box-shadow: 5px 5px 5px #000;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 5px;
+	background-color: #FFF !important;
+	-webkit-print-color-adjust: exact;
+}
+#PrintDealTitle {
+	top:10px;
+	left:15px;
+	width:500px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:24px;
+	font-weight:bold;
+}
+#PrintDealDate {
+	top:20px;
+	width:150px;
+	right:10px;
+	text-align:right;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+}
+#DealBorders {
+	top:50px;
+	left:5px;
+	width:690px;
+	height:195px;
+	position:absolute;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+}
+#PrintDealImage {
+	top:15px;
+	left:10px;
+	width:120px;
+	text-align:center;
+	position:absolute;
+}
+#PrintDealDetail {
+	top:30px;
+	left:205px;
+	width:470px;
+	height:135px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:20px;
+}
+#PrintDealBusiness {
+	top:255px;
+	left:15px;
+	width:400px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+}
+#PrintDealAddress {
+	top:282px;
+	width:400px;
+	left:15px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+}
+#PrintDealPhone {
+	top:260px;
+	width:175px;
+	right:15px;
+	text-align:right;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+}
+/* Bottom border section */
+#BottomMssg {
+	bottom:10px;
+	left:140px;
+	position:absolute;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:24px;
+}
