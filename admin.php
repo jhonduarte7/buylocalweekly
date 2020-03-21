@@ -67,39 +67,41 @@ session_start();
 
 		mysqli_select_db($admin_buy_local, $database_admin_buy_local);
 
-		$LoginRS__query = "SELECT id_business, username, password, id_business_status FROM business WHERE username= '".$loginUsername."' AND password= '".$password."' AND id_business_status = '2' " ; 
+		echo $LoginRS__query = "SELECT id_business, username, password, id_business_status FROM business WHERE username= '".$loginUsername."' AND password= '".$password."' AND id_business_status = '2' " ; 
 
-       $LoginRS = mysqli_query($admin_buy_local, $LoginRS__query) or die(mysqli_error());
+   echo $LoginRS = mysqli_query($admin_buy_local, $LoginRS__query) or die(mysqli_error());
 
   
 
 		if($row = mysqli_fetch_array($LoginRS)){
 
-				 $id_business = $row['id_business'];
+				 echo $id_business = $row['id_business'];
 
-				 $id_business_status = $row['id_business_status'];
+				 echo $id_business_status = $row['id_business_status'];
 
 
 
-				$_SESSION['id_business'] = $id_business;
+				echo "id dea lsesion ".$_SESSION['id_business'] = $id_business;
 
-				$_SESSION['id_business_status'] = $id_business_status;
+				echo $_SESSION['id_business_status'] = $id_business_status;
 
 		}
 
-		$loginFoundUser = mysqli_num_rows($LoginRS);
+		echo "este es un contador ". $loginFoundUser = mysqli_num_rows($LoginRS);
 
-		if ($loginFoundUser) {
+		if ($loginFoundUser > 0) {
+
+
 
 			$loginStrGroup = "";
 
-			if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+			//if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
 
 				//declare two session variables and assign them
 
-				$_SESSION['MM_Username'] = $loginUsername;
+				echo "sesion user ".$_SESSION['MM_Username'] = $loginUsername;
 
-				$_SESSION['MM_UserGroup'] = $loginStrGroup;	      
+				echo "useergroup ".$_SESSION['MM_UserGroup'] = $loginStrGroup;	      
 
 			/*if ((isset($_SESSION['PrevUrl']) && false) || ($id_business_status == 2))  {
 
@@ -107,11 +109,21 @@ session_start();
 
 			}*/
 
-			header("Location: " . $MM_redirectLoginSuccess);
+			//header("Location: ./" $MM_redirectLoginSuccess);
+
+			//header('Location: https://www.w3schools.com/php/php_json.asp/');
+
+			// header("Location: http://www.redirect.to.url.com/"); 
+
+			echo "esta entrando en esta condicion";
+
+
+           echo '<script>location.href="./'.$MM_redirectLoginSuccess.'";</script>';
+			 
 
 		} else {
 
-			header("Location: ". $MM_redirectLoginFailed . "?sec=1");
+			header("Location: ".$MM_redirectLoginFailed . "?sec=1");
 
 		}
 
