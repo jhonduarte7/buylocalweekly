@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require("./_connections/adm_blw.php"); 
 
 $loginFormAction = $_SERVER['PHP_SELF'];

@@ -1,9 +1,7 @@
 <?php
 session_start();
-?>
-
-<?php 
-	if(isset($_SESSION['user_admin']) && (time() - $_SESSION['user_admin'] > 1800)) { 
+require("./_connections/adm_blw.php");
+if(isset($_SESSION['user_admin'])){
 
 ?>
 
@@ -47,70 +45,8 @@ session_start();
 
 	//$citysite = "Chandler";
 
-?>
-
-<?php
-
-	if (!function_exists("GetSQLValueString")) {
-
-		function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-
-	{
-
-  	if (PHP_VERSION < 6) {
-
-    	$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-
-  	}
-
-
-
-	$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-
-
-	switch ($theType) {
-
-		case "text":
-
-			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-
-		break;    
-
-		case "long":
-
-			case "int":
-
-				$theValue = ($theValue != "") ? intval($theValue) : "NULL";
-
-			break;
-
-			case "double":
-
-				$theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-
-			break;
-
-			case "date":
-
-				$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-
-			break;
-
-			case "defined":
-
-				$theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-
-			break;
-
-			}
-
-		return $theValue;
-
-		}
-
-	}
-
+///////////////////////////////////////////////
+	
 
 
 	$editFormAction = $_SERVER['PHP_SELF'];
@@ -157,21 +93,20 @@ session_start();
 
 	$sec = $_SESSION['id_city'];
 
-	mysql_select_db($database_admin_buy_local, $admin_buy_local);
+	mysqli_select_db($admin_buy_local, $database_admin_buy_local);
 
 	$query_RecordsetCity = "SELECT * FROM master_admin WHERE master_admin.id_city = '$sec'";
 
-	$RecordsetCity = mysql_query($query_RecordsetCity, $admin_buy_local) or die(mysql_error());
+	$RecordsetCity = mysqli_query($admin_buy_local, $query_RecordsetCity) or die(mysqli_error());
 
-	$row_RecordsetCity = mysql_fetch_assoc($RecordsetCity);
+	$row_RecordsetCity = mysqli_fetch_assoc($RecordsetCity);
 
-	$totalRows_RecordsetCity = mysql_num_rows($RecordsetCity);
+	$totalRows_RecordsetCity = mysqli_num_rows($RecordsetCity);
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
